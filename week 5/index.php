@@ -6,16 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-          $connect = mysqli_connect(
-        'localhost',
-        'root',
-        '',
-        'csv_db 10');
+   <?php
+$connect = mysqli_connect('localhost', 'root', '', 'csv_db 10');
 
-        if(!$connect){
-            die("connection failed:" . mysqli_connect_error());
-        }
-    ?>
+$query = "SELECT * FROM colors";
+$result = mysqli_query($connect, $query);
+
+$colors = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+foreach ($colors as $color) {
+    echo '<div style="background:' . $color['Hex'] . '">';
+    echo '<h1>' . $color['Name'] . '</h1>';
+    echo '</div>';
+}
+?>
+
 </body>
 </html>
