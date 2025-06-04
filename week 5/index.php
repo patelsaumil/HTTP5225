@@ -10,9 +10,8 @@
 $connect = mysqli_connect('localhost', 'root', '', 'csv_db 10');
 
 $query = "SELECT * FROM colors";
-$result = mysqli_query($connect, $query);
+$colors = mysqli_query($connect, $query);
 
-$colors = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 foreach ($colors as $color) {
     echo '<div style="background:' . $color['Hex'] . '">';
