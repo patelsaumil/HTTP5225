@@ -1,4 +1,5 @@
-@extends('admin');
+@extends('layouts.admin')
+
 @section('content')
     <h1>Add a Students</h1>
    <form action="{{ route('students.store') }}" method="post">
