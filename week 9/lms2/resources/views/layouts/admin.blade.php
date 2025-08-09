@@ -10,7 +10,8 @@
     <div>
         <ul>
             <li><a href="">Home</a></li>
-            <li><a href="">Students</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('students.index') }}">Students</a></li>
+    <li class="nav-item"><a class="nav-link" href="{{ route('courses.index') }}">Courses</a></li>
         </ul>
     </div>
     <hr>
