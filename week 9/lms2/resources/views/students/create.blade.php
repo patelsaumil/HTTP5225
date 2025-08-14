@@ -36,7 +36,17 @@
                    style="padding: 8px; width: 300px; border: 1px solid {{ $errors->has('email') ? 'red' : '#ccc' }};">
         </div>
 
+        <br><br>
+               @foreach($courses as $course)
+               <input type="checkbox" name="courses[]" value="{{ $course->id }}">
+               {{ $course->name }}
+               <br>
+                @endforeach
+
         <input type="submit" value="Add"
                style="padding: 8px 20px; background-color: red; color: white; border: none; cursor: pointer;">
+
+
+                
     </form>
 @endsection
